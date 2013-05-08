@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+  <ul>
+    <% @event.members.each do |member| %>
+        <li><%= member.name %></li>
+    <% end %>
+  </ul>
+
+  <%= simple_form_for [@event, @member || @event.members.build] do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, 'Join' %>
+  <% end %>
+  <%= link_to 'Kumite', [:shuffle, @event], class: 'btn btn-primary' %>
+</p>
+
+<%= link_to 'Back', root_path %>

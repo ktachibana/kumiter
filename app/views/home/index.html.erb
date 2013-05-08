@@ -1,0 +1,12 @@
+<h1>Events</h1>
+
+<ul>
+  <% Event.order(created_at: :desc).each do |event| %>
+      <li><%= link_to event.name, event, class: 'btn' %></li>
+  <% end %>
+</ul>
+
+<%= simple_form_for @event || Event.new, html: { class: 'form-inline' } do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+<% end %>
