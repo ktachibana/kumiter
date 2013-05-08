@@ -54,3 +54,6 @@ end
 group :production do
   gem 'pg'
 end
+
+gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git', branch: 'v3.0.0.beta1'
+gem 'twitter-bootstrap-rails'
